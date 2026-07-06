@@ -1,6 +1,6 @@
 ---
 name: tervinos
-description: Linux, distilled to what actually matters. tervinOS strips away the clutter and perfects three things: browsing with Zen, writing in markdown, and gaming on Steam. Nothing more. Nothing slower.
+description: "Linux, distilled to what actually matters. tervinOS strips away the clutter and perfects three things: browsing with Zen, writing in markdown, and gaming on Steam. Nothing more. Nothing slower."
 base-image: ghcr.io/ublue-os/kinoite-main
 image-version: latest
 
