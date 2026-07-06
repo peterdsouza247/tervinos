@@ -9,7 +9,6 @@ modules:
     install:
       - ghostwriter
       - wmctrl
-      - power-profiles-daemon
       - distrobox
     remove: []
 
@@ -27,12 +26,6 @@ modules:
     files:
       - source: system
         destination: /   # copies repo's files/system/* into the image
-
-  # Enable services
-  - type: systemd
-    system:
-      enabled:
-        - power-profiles-daemon.service
 
   - type: signing
   
