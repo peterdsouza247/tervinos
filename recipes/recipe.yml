@@ -13,13 +13,14 @@ modules:
     remove: []
 
   - type: default-flatpaks
-    notify: true
-    system:
-      install:
-        - app.zen_browser.zen          
-        - com.valvesoftware.Steam      
-        - com.github.tchx84.Flatseal   # permission manager (Privacy)
-        - org.kde.filelight            # storage visualizer
+    configurations:
+      - scope: system
+        notify: true
+        install:
+          - app.zen_browser.zen
+          - com.valvesoftware.Steam
+          - com.github.tchx84.Flatseal    # permission manager (Privacy)
+          - org.kde.filelight             # storage visualizer
 
   # Ship TervinOS files into the image (branding, Tervin Shell, configs)
   - type: files
