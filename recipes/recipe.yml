@@ -1,30 +1,28 @@
 ---
 name: tervinos
-description: Linux, distilled to what actually matters.
+description: Linux, distilled to what actually matters. tervinOS strips away the clutter and perfects three things: browsing with Zen, writing in markdown, and gaming on Steam. Nothing more. Nothing slower.
 base-image: ghcr.io/ublue-os/kinoite-main
 image-version: latest
 
 modules:
-  # System packages layered into the image
   - type: rpm-ostree
     install:
-      - ghostwriter        # markdown notepad (Tervin Notes stand-in)
-      - wmctrl             # window capture for Tervin Shell
+      - ghostwriter
+      - wmctrl
       - power-profiles-daemon
       - distrobox
     remove: []
 
-  # Default apps every user gets, installed on first boot
   - type: default-flatpaks
     notify: true
     system:
       install:
-        - app.zen_browser.zen          # Zen Browser
-        - com.valvesoftware.Steam      # Steam
+        - app.zen_browser.zen          
+        - com.valvesoftware.Steam      
         - com.github.tchx84.Flatseal   # permission manager (Privacy)
         - org.kde.filelight            # storage visualizer
 
-  # Ship your own files into the image (branding, Tervin Shell, configs)
+  # Ship TervinOS files into the image (branding, Tervin Shell, configs)
   - type: files
     files:
       - source: system
